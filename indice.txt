@@ -18,3 +18,5 @@ CAP 7
     conta.py 
               * @staticmethod vs @classmethod (reler artigo) (FIXME)
               
+CAP 13 
+    fazer exercícios opcionais

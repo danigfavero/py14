@@ -41,3 +41,10 @@ if __name__ == "__main__":
         contas.append(conta)
 
     arquivo.close()
+
+
+    print('saldo -  imposto')
+
+    for c in contas:
+        print('{} - {}'.format(c.saldo, c.get_valor_imposto()))
+
