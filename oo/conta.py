@@ -2,10 +2,10 @@ import abc
 from historico import *
 from tributavel import *
 
-class Conta(abc.ABC):
 
+class Conta(abc.ABC):
     __slots__ = ['_numero', '_titular', '_saldo', '_historico']
-    
+
     def __init__(self, numero, titular, saldo=0.0):
         self._numero = numero
         self._titular = titular
@@ -15,14 +15,13 @@ class Conta(abc.ABC):
 
     def __str__(self):
         string = ('Conta: {} \tSaldo : {} \nTitular: {} {} \nCPF: {}'.format(
-                 self._numero, self._saldo, self._titular.nome, 
-                 self._titular.sobrenome, self._titular.cpf))
+            self._numero, self._saldo, self._titular.nome,
+            self._titular.sobrenome, self._titular.cpf))
         string += '\nTransações:'
         for t in self._historico.transacoes:
             string += '\n- {}'.format(t)
         string += '\nTipo da Conta: {}'.format(self._tipo)
         return string
-        
 
     @property
     def saldo(self):
@@ -47,7 +46,6 @@ class Conta(abc.ABC):
         print("numero : {} \nsaldo: {}".format(self._numero, self._saldo))
         print("titular: {} {} \ncpf: {}".format(self._titular.nome, self._titular.sobrenome, self._titular.cpf))
         self._historico.transacoes.append("tirou extrato, saldo de {}".format(self._saldo))
-
 
     def transfere_para(self, destino, valor):
         retirou = self.saca(valor)
@@ -88,8 +86,9 @@ class ContaInvestimento(Conta):
     def get_valor_imposto(self):
         return self._saldo * 0.03
 
-class SeguroDeVida():
-    
+
+class SeguroDeVida:
+
     def __init__(self, valor, titular, numero_apolice):
         self._valor = valor
         self._titular = titular
@@ -101,7 +100,8 @@ class SeguroDeVida():
 
 class SaldoInsuficienteError(RuntimeError):
     pass
-    
+
+
 if __name__ == '__main__':
     cliente1 = Cliente('João', 'Oliveira', '11111111111-11')
     cliente2 = Cliente('José', 'Azevedo', '222222222-22')
@@ -115,6 +115,3 @@ if __name__ == '__main__':
     print(conta1)
     print(conta2)
     print(conta3)
-
-
-

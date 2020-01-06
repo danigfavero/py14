@@ -1,6 +1,7 @@
 import datetime
 from cliente import *
 
+
 class Data:
 
     def __init__(self, dia, mes, ano):
@@ -26,6 +27,7 @@ class Historico:
         print("transações: ")
         for t in self.transacoes:
             print("-", t)
+
 
 class TributavelMixIn:
 

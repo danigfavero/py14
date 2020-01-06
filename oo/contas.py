@@ -2,7 +2,6 @@ from collections.abc import MutableSequence
 
 
 class Contas(MutableSequence):
-
     _dados = []
 
     def __len__(self):
@@ -29,7 +28,7 @@ class Contas(MutableSequence):
 if __name__ == "__main__":
 
     import csv
-    from conta import ContaCorrente
+    from conta import ContaCorrente, Conta
 
     contas = Contas()
 
@@ -37,14 +36,15 @@ if __name__ == "__main__":
     leitor = csv.reader(arquivo)
 
     for linha in leitor:
-        conta = ContaCorrente(linha[0], linha[1], linha[2], linha[3])
+        conta = ContaCorrente(linha[0], linha[1], float(linha[2]))
         contas.append(conta)
 
     arquivo.close()
 
-
-    print('saldo -  imposto')
+    print('saldo \timposto \tatualizado')
 
     for c in contas:
-        print('{} - {}'.format(c.saldo, c.get_valor_imposto()))
-
+        saldo = c.saldo
+        imposto = c.get_valor_imposto()
+        c.saca(imposto)
+        print('{} \t{} \t{}'.format(saldo, imposto, c.saldo))

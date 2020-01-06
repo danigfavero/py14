@@ -1,5 +1,6 @@
 import abc
 
+
 class Tributavel(abc.ABC):
     """ Classe que contém operações de um objeto autenticável
 

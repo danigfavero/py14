@@ -1,5 +1,6 @@
 from conta import *
 
+
 class AtualizadorDeContas:
 
     def __init__(self, selic, saldo_total=0):
@@ -8,10 +9,10 @@ class AtualizadorDeContas:
 
     def roda(self, conta):
         if not hasattr(conta, 'atualiza'):
-            print('instância de {} não implementa o método atualiza()'.format(self.__class__.__name__))    
+            print('instância de {} não implementa o método atualiza()'.format(self.__class__.__name__))
             return
         if not hasattr(conta, '_saldo'):
-            print('instância de {} não implementa o atributo _saldo'.format(self.__class__.__name__))    
+            print('instância de {} não implementa o atributo _saldo'.format(self.__class__.__name__))
             return
         print('Saldo anterior: {}'.format(self._saldo_total))
         self._saldo_total -= conta._saldo

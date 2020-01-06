@@ -11,10 +11,10 @@ class Banco:
         self._contas.append(conta)
         self._total_de_contas += 1
 
-    def pegaConta(self, pos):
+    def pega_conta(self, pos):
         return self._contas[pos]
 
-    def pegaTotalDeContas(self):
+    def pega_total_de_contas(self):
         return self._total_de_contas
 
 
@@ -25,5 +25,5 @@ if __name__ == '__main__':
     b.adiciona(cc)
     b.adiciona(cp)
     adc = AtualizadorDeContas(0.01)
-    for i in range(b.pegaTotalDeContas()):
-        adc.roda(b.pegaConta(i))
+    for i in range(b.pega_total_de_contas()):
+        adc.roda(b.pega_conta(i))

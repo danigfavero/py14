@@ -1,8 +1,9 @@
 from banco import *
 
+
 class ManipuladorDeTributaveis:
 
-    def calcula_impostos(self, lista_tributaveis):
+    def calcula_impostos(lista_tributaveis):
         total = 0
         for t in lista_tributaveis:
             if isinstance(t, Tributavel):
@@ -13,6 +14,7 @@ class ManipuladorDeTributaveis:
 
 
 if __name__ == "__main__":
+    from tributavel import Tributavel
     # cc1 = ContaCorrente('123-4', 'João', 1000.0)
     # cc2 = ContaCorrente('123-4', 'José', 1000.0)
     # seguro1 = SeguroDeVida(100.0, 'José', '345-77')
@@ -41,11 +43,7 @@ if __name__ == "__main__":
     Tributavel.register(SeguroDeVida)
     Tributavel.register(ContaInvestimento)
 
-
-    lista_tributaveis = []
-    lista_tributaveis.append(cc)
-    lista_tributaveis.append(seguro)
-    lista_tributaveis.append(ci)
+    lista_tributaveis = [cc, seguro, ci]
 
     mt = ManipuladorDeTributaveis()
     total = mt.calcula_impostos(lista_tributaveis)
