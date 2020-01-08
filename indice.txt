@@ -9,14 +9,18 @@ CAP 3
 CAP 4
     listas: forca.py
             meses.py !
-    ed: ed.py (FIXME)
+    ed: ed.py
 CAP 5
     funcoes.py
     argskwargs.py
 CAP 7
     teste_conta.py 
     conta.py 
-              * @staticmethod vs @classmethod (reler artigo) (FIXME)
+              * @staticmethod vs @classmethod
+
+CAP 8
+    https://www.tutorialsteacher.com/python/property-function
+    saldo = property(getsaldo, setsaldo) => @property
               
 CAP 13 
-    fazer exercícios opcionais
+    questões: por que Iterable.Iterable?

@@ -72,11 +72,12 @@ for key in pessoa.keys():
     print('{}: {}'.format(key, pessoa[key]))
 
 # E5
+criando = True
 lista = [pessoa]
 pergunta = input('Quer adicionar uma nova pessoa (S/N)? ')
 if 'N'.upper() in pergunta.upper():
     criando = False
-criando = True
+
 
 while criando:
     pessoa = {}
@@ -91,8 +92,8 @@ while criando:
     pergunta = input('Quer continuar adicionar uma nova pessoa? (S/N)')
     if 'N'.upper() in pergunta.upper():
         criando = False
-    criando = True
-for i in lista:
-    print('Outra pessoa...')
-    for key in lista[key].keys():
-        print('{}: {}'.format(key, pessoa[key]))   
+
+for pessoa in lista:
+    print('###########################')
+    for key in pessoa.keys():
+        print('{}:\t{}'.format(key, pessoa[key]))   

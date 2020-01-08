@@ -31,7 +31,7 @@ if __name__ == "__main__":
     from conta import ContaCorrente, Conta
 
     contas = Contas()
-
+    
     arquivo = open('contas.txt', 'r')
     leitor = csv.reader(arquivo)
 
