@@ -22,7 +22,7 @@ class Disciplina:
         Disciplina.adiciona_disciplina()
     
     @classmethod
-    def adiciona_disciplina(cls): #TESTAR
+    def adiciona_disciplina(cls):
         cls._numero_de_disciplinas += 1
 
     def adiciona_aluno(self, aluno):
