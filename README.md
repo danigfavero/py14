@@ -5,14 +5,16 @@ Não se preocupe se seus códigos estiverem ligeiramente diferentes do meu ou da
 
 Aqui está a relação de exercício da apostila com os arquivos desse repositório. Qualquer coisa manda um PR!
 
-| Exercício     | Arquivo       
-| ------------- |:-------------:
-| 3.12 | jogos/adivinhacao.py 
-| 3.14 | jogos/adivinhacao2.py   
-| 3.16 | jogos/adivinhacao2.py
-| 3.16* | jogos/adivinhacao3.py
-| 5.1 | jogos/forca.py
-| 5.5 | ed.py
-   
-   
-\* Exercícios opcionais
+| Assunto | Exercício     | Arquivo    
+| ------------- |:------------- |:-------------:
+| if | 3.12 | jogos/adivinhacao.py 
+| while | 3.14 | jogos/adivinhacao2.py   
+| for/opcionais | 3.16 | jogos/adivinhacao2.py, jogos/adivinhacao3.py
+| listas | 5.1 | jogos/forca.py
+| estruturas de dados | 5.5 | ed.py
+| funções | 6.5 | funcoes.py
+| número arbitrário de argumentos e chaves | 6.8 | argskwargs.py
+| encapsulamento | 6.9 | jogos/forca2.py, jogos/adivinhacao4.py, jogos/menu.py
+| arquivos - escrita | 7.4 | jogos/arquivo.py
+| arquivos - leitura | 7.8 | jogos/forca3.py
+| refatoração | 7.11 | jogos/forca4.py
