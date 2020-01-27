@@ -10,6 +10,9 @@ Aqui está a relação de exercício da apostila com os arquivos desse repositó
 | 3.12 | jogos/adivinhacao.py 
 | 3.14 | jogos/adivinhacao2.py   
 | 3.16 | jogos/adivinhacao2.py
+| 3.16* | jogos/adivinhacao3.py
 | 5.1 | jogos/forca.py
 | 5.5 | ed.py
-       
+   
+   
+\* Exercícios opcionais
