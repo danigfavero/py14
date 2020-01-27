@@ -1,117 +1,58 @@
-import abc
-from historico import *
-from tributavel import *
+"""Exercícios 8.12 - Orientação a Objetos
+"""
 
+class Conta:
 
-class Conta(abc.ABC):
-    __slots__ = ['_numero', '_titular', '_saldo', '_historico']
-
-    def __init__(self, numero, titular, saldo=0.0):
-        self._numero = numero
-        self._titular = titular
-        self._saldo = saldo
-        self._historico = Historico()
-        self._tipo = self.__class__.__name__
-
-    def __str__(self):
-        string = ('Conta: {} \tSaldo : {} \nTitular: {} {} \nCPF: {}'.format(
-            self._numero, self._saldo, self._titular.nome,
-            self._titular.sobrenome, self._titular.cpf))
-        string += '\nTransações:'
-        for t in self._historico.transacoes:
-            string += '\n- {}'.format(t)
-        string += '\nTipo da Conta: {}'.format(self._tipo)
-        return string
-
-    @property
-    def saldo(self):
-        return self._saldo
+    def __init__(self, numero, titular, saldo, limite):
+        self.numero = numero
+        self.titular = titular
+        self.saldo = saldo
+        self.limite = limite
 
     def deposita(self, valor):
-        if valor < 0:
-            raise ValueError('Você tentou depositar um valor negativo')
-        else:
-            self._saldo += valor
-            self._historico.transacoes.append("depósito de {}".format(valor))
+        self.saldo += valor
 
     def saca(self, valor):
-        if valor < 0:
-            raise ValueError('Você tentou depositar um valor negativo')
-        if self._saldo < valor:
-            raise SaldoInsuficienteError()
-        self._saldo -= valor
-        self._historico.transacoes.append("saque de {}".format(valor))
+        if self.saldo < valor:
+            return False
+        else:
+            self.saldo -= valor
+            return True
 
     def extrato(self):
-        print("numero : {} \nsaldo: {}".format(self._numero, self._saldo))
-        print("titular: {} {} \ncpf: {}".format(self._titular.nome, self._titular.sobrenome, self._titular.cpf))
-        self._historico.transacoes.append("tirou extrato, saldo de {}".format(self._saldo))
+        print(f"numero: {self.numero} \nsaldo: {self.saldo}")
 
     def transfere_para(self, destino, valor):
         retirou = self.saca(valor)
-        if retirou:
+        if retirou == False:
+            return False
+        else:
             destino.deposita(valor)
-            self._historico.transacoes.append("transferência de {} para conta {}".format(valor, destino._numero))
-        return retirou
-
-    @abc.abstractmethod
-    def atualiza(self, taxa):
-        self._saldo += self._saldo * taxa
+            return True
 
 
-class ContaCorrente(Conta):
+if __name__ == "__main__":
 
-    def atualiza(self, taxa):
-        self._saldo += self._saldo * taxa * 2
+    # testando criação da conta
+    conta1 = Conta('123-4', 'João', 200.0, 1000.0)
+    conta2 = Conta('123-5', 'Maria', 450.0, 1000.0)
+    conta1.extrato()
+    conta2.extrato()
+    print('')
 
-    def deposita(self, valor):
-        super().deposita(valor)
-        self._saldo -= 0.10
+    # testando saque e depósito
+    conta1.saca(200.0)
+    conta2.deposita(100.0)
+    conta1.extrato()
+    conta2.extrato()
+    print('')
 
-    def get_valor_imposto(self):
-        return self._saldo * 0.01
+    # testando tranferência
+    if not conta1.transfere_para(conta2, 10.0):
+        print('Não foi possível realizar a tranferência')
+    if conta2.transfere_para(conta1, 20.0):
+        print('Tranferência realizada com sucesso!')
+    conta1.extrato()
+    conta2.extrato()
 
-
-class ContaPoupanca(Conta):
-
-    def atualiza(self, taxa):
-        self._saldo += self._saldo * taxa * 3
-
-
-class ContaInvestimento(Conta):
-
-    def atualiza(self, taxa):
-        self._saldo += self._saldo * taxa * 5
-
-    def get_valor_imposto(self):
-        return self._saldo * 0.03
-
-
-class SeguroDeVida:
-
-    def __init__(self, valor, titular, numero_apolice):
-        self._valor = valor
-        self._titular = titular
-        self._numero_apolice = numero_apolice
-
-    def get_valor_imposto(self):
-        return 42 + self._valor * 0.05
-
-
-class SaldoInsuficienteError(RuntimeError):
-    pass
-
-
-if __name__ == '__main__':
-    cliente1 = Cliente('João', 'Oliveira', '11111111111-11')
-    cliente2 = Cliente('José', 'Azevedo', '222222222-22')
-    cliente3 = Cliente('Maria', 'Airam', '333333333-33')
-    conta1 = ContaCorrente('123-4', cliente1, 1000.0)
-    conta2 = ContaPoupanca('123-5', cliente2, 1000.0)
-    conta3 = ContaInvestimento('123-6', cliente3, 1000.0)
-    conta1.deposita(100.0)
-    conta1.saca(50.0)
-    conta1.transfere_para(conta2, 200.0)
-    print(conta1)
-    print(conta2)
-    print(conta3)
+    # TODO: EXERCÍCIOS OPCIONAIS

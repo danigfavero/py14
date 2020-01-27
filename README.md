@@ -17,4 +17,6 @@ Aqui está a relação de exercício da apostila com os arquivos desse repositó
 | encapsulamento | 6.9 | jogos/forca2.py, jogos/adivinhacao4.py, jogos/menu.py
 | arquivos - escrita | 7.4 | jogos/arquivo.py
 | arquivos - leitura | 7.8 | jogos/forca3.py
-| refatoração | 7.11 | jogos/forca4.py
+| refatoração | 7.11 | jogos/forca4.py, jogos/adivinhacao5.py
+| POO improvisada | 8.2 | oo/teste_conta.py 
+| orientação a objetos | 8.12 | oo/conta.py
