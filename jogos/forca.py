@@ -1,10 +1,10 @@
 import random
 
+
 def imprime_mensagem_abertura():
     print('*********************************')
     print('***Bem vindo ao jogo da Forca!***')
     print('*********************************')
-
 
 def carrega_palavra():
     palavras = []
@@ -33,7 +33,6 @@ def marca_chute_correto(palavra, chute, letras_acertadas):
         if chute.upper() == letra.upper():
             letras_acertadas[posicao] = letra
         posicao += 1
-
 
 def imprime_mensagem_vencedor():
     print('Parabéns, você ganhou!')
@@ -118,7 +117,6 @@ def desenha_forca(erros):
     print("_|___         ")
     print()
 
-
 def jogar():
     imprime_mensagem_abertura()
     palavra_secreta = carrega_palavra()
@@ -151,4 +149,5 @@ def jogar():
 
     print('Fim do jogo')
 
-jogar()
+if __name__ == "__main__":
+    jogar()
