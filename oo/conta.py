@@ -54,5 +54,3 @@ if __name__ == "__main__":
         print('Tranferência realizada com sucesso!')
     conta1.extrato()
     conta2.extrato()
-
-    # TODO: EXERCÍCIOS OPCIONAIS

@@ -19,4 +19,4 @@ Aqui está a relação de exercício da apostila com os arquivos desse repositó
 | arquivos - leitura | 7.8 | jogos/forca3.py
 | refatoração | 7.11 | jogos/forca4.py, jogos/adivinhacao5.py
 | POO improvisada | 8.2 | oo/teste_conta.py 
-| orientação a objetos | 8.12 | oo/conta.py
+| orientação a objetos | 8.12 | oo/conta.py, oo/cliente.py, oo/historico.py, oo/conta2.py
