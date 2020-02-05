@@ -13,6 +13,7 @@ class Conta(abc.ABC):
         self._saldo = saldo
         self._limite = limite
         self._historico = Historico() 
+        self._tipo = self.__class__.__name__ # tipo da conta
 
     @property
     def saldo(self):
@@ -34,6 +35,8 @@ class Conta(abc.ABC):
         extrato = ('Conta: {} \tSaldo : {} \nTitular: {} {} \nCPF: {}'.format(
             self._numero, self._saldo, self._titular.nome,
             self._titular.sobrenome, self._titular.cpf))
+        # imprime também o tipo da conta
+        extrato += '\nTipo da Conta: {}'.format(self._tipo)
         return extrato
 
 
@@ -76,36 +79,20 @@ class ContaInvestimento(Conta):
 
 
 
-
 if __name__ == "__main__":
 
-    # testando nossa classe abstrata
+    # verificando o tipo da conta
     cliente1 = Cliente('João', 'Oliveira', '11111111111-11')
     cliente2 = Cliente('José', 'Azevedo', '222222222-22')
-
-    cc = ContaCorrente('123-4', cliente1, 1000.0)
-    cp = ContaPoupanca('123-5', cliente2, 1000.0)
-
-    cc.atualiza(0.01)
-    cp.atualiza(0.01)
-
-    print(cc.saldo)
-    print(cp.saldo)
-
-    print("****************************")
-
-    # testando a classe 'ContaInvestimento'
     cliente3 = Cliente('Maria', 'Costa', '333333333-33')
-    ci = ContaInvestimento('123-6', cliente3, 1000.0)
 
-    ci.deposita(1000.0)
-    ci.atualiza(0.01)
-    print(ci.saldo)
+    conta1 = ContaCorrente('123-4', cliente1, 1000.0)
+    conta2 = ContaPoupanca('123-5', cliente2, 1000.0)
+    conta3 = ContaInvestimento('123-6', cliente3, 1000.0)
 
-    print("****************************")
-
-    # tentando instanciar um objeto da classe 'Conta'
-    c = Conta('123-7', cliente2) # não podemos instanciar uma classe abstrata
+    print(conta1)
+    print(conta2)
+    print(conta3)
 
 
     

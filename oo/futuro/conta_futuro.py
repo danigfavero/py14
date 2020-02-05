@@ -109,7 +109,7 @@ class SaldoInsuficienteError(RuntimeError):
 if __name__ == '__main__':
     cliente1 = Cliente('João', 'Oliveira', '11111111111-11')
     cliente2 = Cliente('José', 'Azevedo', '222222222-22')
-    cliente3 = Cliente('Maria', 'Airam', '333333333-33')
+    cliente3 = Cliente('Maria', 'Costa', '333333333-33')
     conta1 = ContaCorrente('123-4', cliente1, 1000.0)
     conta2 = ContaPoupanca('123-5', cliente2, 1000.0)
     conta3 = ContaInvestimento('123-6', cliente3, 1000.0)

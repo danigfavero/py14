@@ -24,6 +24,6 @@ Aqui está a relação de exercício da apostila com os arquivos desse repositó
 | métodos de classe | 9.5* | oo/conta_id.py
 | herança e polimorfismo | 11.7 | oo/conta_heranca.py, oo/atualizador.py
 | herança e polimorfismo | 11.7* | oo/banco.py, oo/conta_heranca2.py, oo/atualizador2.py
-| classes abstratas | 11.9 | oo/conta_abstrata.py
+| classes abstratas | 11.9 | oo/conta_abstrata.py, oo/conta_abstrata2.py
 
 \* Exercícios opcionais
