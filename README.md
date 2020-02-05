@@ -20,3 +20,5 @@ Aqui está a relação de exercício da apostila com os arquivos desse repositó
 | refatoração | 7.11 | jogos/forca4.py, jogos/adivinhacao5.py
 | POO improvisada | 8.2 | oo/teste_conta.py 
 | orientação a objetos | 8.12 | oo/conta.py, oo/cliente.py, oo/historico.py, oo/conta2.py
+| modificadores de acesso | 9.5 | oo/conta_privada.py, oo/conta_protegida.py, oo/conta_slots.py
+| métodos de classe | 9.5 | oo/conta_id.py

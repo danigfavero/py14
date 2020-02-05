@@ -1,10 +1,12 @@
 import abc
 from historico import *
 from tributavel import *
+from cliente import *
 
 
 class Conta(abc.ABC):
     __slots__ = ['_numero', '_titular', '_saldo', '_historico']
+    identificador = 1
 
     def __init__(self, numero, titular, saldo=0.0):
         self._numero = numero
@@ -12,6 +14,8 @@ class Conta(abc.ABC):
         self._saldo = saldo
         self._historico = Historico()
         self._tipo = self.__class__.__name__
+        self.identificador = Conta.identificador
+        Conta.identificador += 1
 
     def __str__(self):
         string = ('Conta: {} \tSaldo : {} \nTitular: {} {} \nCPF: {}'.format(
@@ -113,5 +117,9 @@ if __name__ == '__main__':
     conta1.saca(50.0)
     conta1.transfere_para(conta2, 200.0)
     print(conta1)
+    #print(conta1.identificador)
     print(conta2)
+    #print(conta2.identificador)
     print(conta3)
+    #print(conta3.identificador)
+
