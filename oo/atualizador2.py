@@ -1,4 +1,4 @@
-"""Exercícios 11.7 - Herança e polimorfismo
+"""Exercícios 11.7 - Herança e polimorfismo (opcionais)
 """
 from conta_heranca import *
 
@@ -10,18 +10,23 @@ class AtualizadorDeContas:
         self._saldo_total = saldo_total
 
     def roda(self, conta):
-        # imprime o saldo anterior:
-        print('Saldo anterior: {}'.format(self._saldo_total))
+        # checando se a instância passada no argumento 'conta' é de uma
+        # subclasse de "Conta":
 
-        # atualiza a conta:
-        self._saldo_total -= conta._saldo
-        conta.atualiza(self._selic)
+        if isinstance(conta, Conta):
 
-        # soma o saldo final ao atributo _saldo_total
-        self._saldo_total += conta._saldo
+            print('Saldo anterior: {}'.format(self._saldo_total))
 
-        # imprime o saldo final
-        print('Saldo final: {}'.format(self._saldo_total))
+            self._saldo_total -= conta._saldo
+            conta.atualiza(self._selic)
+
+            self._saldo_total += conta._saldo
+
+            print('Saldo final: {}'.format(self._saldo_total))
+
+        else: # se não for do tipo 'Conta':
+
+            print('Não foi possível rodar o atualizador de contas')
 
 
 if __name__ == '__main__':
@@ -42,6 +47,6 @@ if __name__ == '__main__':
 
     print('Saldo total: {}'.format(adc._saldo_total))
 
-
-# Note que a classe AtualizadorDeContas não depende do método 'atualiza()'
-# particular de cada classe filha de 'Conta'.
+    # testando corner cases
+    adc.roda(cliente1)
+    adc.roda(3)

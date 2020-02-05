@@ -21,4 +21,8 @@ Aqui está a relação de exercício da apostila com os arquivos desse repositó
 | POO improvisada | 8.2 | oo/teste_conta.py 
 | orientação a objetos | 8.12 | oo/conta.py, oo/cliente.py, oo/historico.py, oo/conta2.py
 | modificadores de acesso | 9.5 | oo/conta_privada.py, oo/conta_protegida.py, oo/conta_slots.py
-| métodos de classe | 9.5 | oo/conta_id.py
+| métodos de classe | 9.5* | oo/conta_id.py
+| herança e polimorfismo | 11.7 | oo/conta_heranca.py, oo/atualizador.py
+| herança e polimorfismo | 11.7* | oo/banco.py, oo/conta_heranca2.py, oo/atualizador2.py
+
+\* Exercícios opcionais
