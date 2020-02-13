@@ -1,3 +1,5 @@
+""" Exercícios 12.6 - Interfaces e classes abstratas
+"""
 import abc
 
 

@@ -25,5 +25,7 @@ Aqui está a relação de exercício da apostila com os arquivos desse repositó
 | herança e polimorfismo | 11.7 | oo/conta_heranca.py, oo/atualizador.py
 | herança e polimorfismo | 11.7* | oo/banco.py, oo/conta_heranca2.py, oo/atualizador2.py
 | classes abstratas | 11.9 | oo/conta_abstrata.py, oo/conta_abstrata2.py
+| mix-ins | 12.4 | oo/conta_mixin.py, oo/tributavel_mixin.py, oo/manipulador.py
+| interfaces e classes abstratas | 12.6 | oo/conta_interface, oo/tributavel.py, oo/manipulador_tributaveis.py
 
 \* Exercícios opcionais
