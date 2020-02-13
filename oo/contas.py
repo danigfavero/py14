@@ -1,3 +1,5 @@
+""" Exercícios 14.7 - Collections
+"""
 from collections.abc import MutableSequence
 
 
@@ -28,23 +30,27 @@ class Contas(MutableSequence):
 if __name__ == "__main__":
 
     import csv
-    from conta import ContaCorrente, Conta
+    from conta_excecoes import *
 
     contas = Contas()
     
     arquivo = open('contas.txt', 'r')
-    leitor = csv.reader(arquivo)
+    leitor = csv.DictReader(arquivo)
 
     for linha in leitor:
-        conta = ContaCorrente(linha[0], linha[1], float(linha[2]))
+        conta = ContaCorrente(linha["numero"], 
+                              linha["titular"],
+                              float(linha["saldo"]),
+                              float(linha["limite"]))
         contas.append(conta)
 
     arquivo.close()
 
-    print('saldo \timposto \tatualizado')
+    print('saldo \t\timposto \tatualizado')
 
     for c in contas:
         saldo = c.saldo
         imposto = c.get_valor_imposto()
         c.saca(imposto)
-        print('{} \t{} \t{}'.format(saldo, imposto, c.saldo))
+        print(f'{saldo} \t\t{imposto} \t\t{c.saldo}')
+

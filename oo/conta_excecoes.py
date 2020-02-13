@@ -112,13 +112,13 @@ if __name__ == '__main__':
     valor = -1000
     try:
         cc.saca(valor)
-        print('Saque de {} realizado com sucesso'.format(valor))
+        print(f'Saque de {valor} realizado com sucesso')
     except ValueError:
         print('O valor a ser sacado deve ser um número positivo.')
 
     try:
         cc.deposita(valor)
-        print('Depósito de {} realizado com sucesso.'.format(valor))
+        print(f'Depósito de {valor} realizado com sucesso.')
     except ValueError: # opa, não implementamos no deposita!
         print('O valor a ser depositado deve ser um número positivo.')
 
@@ -126,7 +126,7 @@ if __name__ == '__main__':
     valor = 5000.0
     try:
         cc.saca(valor)
-        print('Saque de {} realizado com sucesso.'.format(valor))
+        print(f'Saque de {valor} realizado com sucesso.')
     except ValueError:
         print('O valor a ser sacado deve ser um número positivo.')
     except SaldoInsuficienteError: # precisamos checar esse erro também :p
