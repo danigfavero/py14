@@ -27,5 +27,7 @@ Aqui está a relação de exercício da apostila com os arquivos desse repositó
 | classes abstratas | 11.9 | oo/conta_abstrata.py, oo/conta_abstrata2.py
 | mix-ins | 12.4 | oo/conta_mixin.py, oo/tributavel_mixin.py, oo/manipulador.py
 | interfaces e classes abstratas | 12.6 | oo/conta_interface, oo/tributavel.py, oo/manipulador_tributaveis.py
+| exceções | 13.7 | oo/conta_excecoes.py, oo/excecoes.py, caixaeletronico.py
+
 
 \* Exercícios opcionais
